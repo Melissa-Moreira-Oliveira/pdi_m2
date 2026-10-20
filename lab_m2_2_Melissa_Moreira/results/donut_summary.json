@@ -1,0 +1,54 @@
+{
+  "input": "images/output/donut_hsv_s120.png",
+  "connectivity": 8,
+  "min_area": 500,
+  "components_initial_c4": 103,
+  "components_initial_c8": 82,
+  "morphology": {
+    "sequence": [
+      "open",
+      "close"
+    ],
+    "kernel_shape": "ellipse",
+    "kernel_sizes": [
+      7,
+      15
+    ],
+    "iterations": [
+      1,
+      1
+    ],
+    "stages": [
+      {
+        "stage": 1,
+        "operation": "open",
+        "kernel_shape": "ellipse",
+        "kernel_size": 7,
+        "iterations": 1,
+        "foreground_before": 217596,
+        "foreground_after": 208385,
+        "file": "results/donut_stage1_open.png"
+      },
+      {
+        "stage": 2,
+        "operation": "close",
+        "kernel_shape": "ellipse",
+        "kernel_size": 15,
+        "iterations": 1,
+        "foreground_before": 208385,
+        "foreground_after": 220329,
+        "file": "results/donut_stage2_close.png"
+      }
+    ]
+  },
+  "initial": {
+    "components_raw": 82,
+    "components_kept": 7,
+    "foreground_pixels": 217596
+  },
+  "final": {
+    "components_raw": 11,
+    "components_kept": 7,
+    "foreground_pixels": 220329
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "input": "images/output/uva_hsv_verde.png",
+  "connectivity": 8,
+  "min_area": 500,
+  "components_initial_c4": 58,
+  "components_initial_c8": 34,
+  "morphology": {
+    "sequence": [
+      "open",
+      "close"
+    ],
+    "kernel_shape": "ellipse",
+    "kernel_sizes": [
+      7,
+      15
+    ],
+    "iterations": [
+      1,
+      1
+    ],
+    "stages": [
+      {
+        "stage": 1,
+        "operation": "open",
+        "kernel_shape": "ellipse",
+        "kernel_size": 7,
+        "iterations": 1,
+        "foreground_before": 291976,
+        "foreground_after": 289604,
+        "file": "results/uva_stage1_open.png"
+      },
+      {
+        "stage": 2,
+        "operation": "close",
+        "kernel_shape": "ellipse",
+        "kernel_size": 15,
+        "iterations": 1,
+        "foreground_before": 289604,
+        "foreground_after": 303006,
+        "file": "results/uva_stage2_close.png"
+      }
+    ]
+  },
+  "initial": {
+    "components_raw": 34,
+    "components_kept": 4,
+    "foreground_pixels": 291976
+  },
+  "final": {
+    "components_raw": 4,
+    "components_kept": 3,
+    "foreground_pixels": 303006
+  }
+}
